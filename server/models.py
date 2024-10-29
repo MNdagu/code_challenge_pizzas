@@ -24,7 +24,7 @@ class Restaurant(db.Model, SerializerMixin):
     pizzas = association_proxy('restaurant_pizzas', 'pizza')
 
     # add serialization rules
-    serialize_rules = ('-restaurant_pizzas.restaurant', '-pizzas.restaurant')
+    serialize_rules = ('-restaurant_pizzas.restaurant', '-pizzas.restaurants')
 
     def __repr__(self):
         return f'<Restaurant {self.name}>'
